@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xliff xmlns="urn:oasis:names:tc:xliff:document:1.2" version="1.2">
+  <file source-language="en" target-language="es" datatype="plaintext" original="flashmessages.es.xlf">
+    <body>
+      <trans-unit id="guidelines.flash.saved" resname="guidelines.flash.saved">
+        <source>guidelines.flash.saved</source>
+        <target>Pautas guardadas.</target>
+      </trans-unit>
+    </body>
+  </file>
+</xliff>

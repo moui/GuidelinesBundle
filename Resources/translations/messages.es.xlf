@@ -1,0 +1,147 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xliff xmlns="urn:oasis:names:tc:xliff:document:1.2" version="1.2">
+  <file source-language="en" target-language="es" datatype="plaintext" original="messages.es.xlf">
+    <body>
+      <trans-unit id="guidelines.title" resname="guidelines.title">
+        <source>guidelines.title</source>
+        <target>Pautas</target>
+      </trans-unit>
+      <trans-unit id="guidelines.widget.title" resname="guidelines.widget.title">
+        <source>guidelines.widget.title</source>
+        <target>Pautas y novedades</target>
+      </trans-unit>
+      <trans-unit id="guidelines.widget.empty" resname="guidelines.widget.empty">
+        <source>guidelines.widget.empty</source>
+        <target>Todavía no hay pautas publicadas.</target>
+      </trans-unit>
+      <trans-unit id="guidelines.widget.write" resname="guidelines.widget.write">
+        <source>guidelines.widget.write</source>
+        <target>Escribirlas</target>
+      </trans-unit>
+      <trans-unit id="guidelines.widget.updated_at" resname="guidelines.widget.updated_at">
+        <source>guidelines.widget.updated_at</source>
+        <target>Actualizado el %date%</target>
+      </trans-unit>
+      <trans-unit id="guidelines.widget.updated_at_by" resname="guidelines.widget.updated_at_by">
+        <source>guidelines.widget.updated_at_by</source>
+        <target>Actualizado el %date% por %user%</target>
+      </trans-unit>
+      <trans-unit id="guidelines.settings.preview_notice" resname="guidelines.settings.preview_notice">
+        <source>guidelines.settings.preview_notice</source>
+        <target>Vista previa: todavía no se guardó nada.</target>
+      </trans-unit>
+      <trans-unit id="guidelines.settings.content" resname="guidelines.settings.content">
+        <source>guidelines.settings.content</source>
+        <target>Texto de la página principal</target>
+      </trans-unit>
+      <trans-unit id="guidelines.settings.content_help" resname="guidelines.settings.content_help">
+        <source>guidelines.settings.content_help</source>
+        <target>Se muestra a todas las personas al final de la página principal, en la tarjeta %card%. Usa Markdown: &lt;code&gt;# Título&lt;/code&gt;, &lt;code&gt;**negrita**&lt;/code&gt;, listas con &lt;code&gt;-&lt;/code&gt;, enlaces &lt;code&gt;[texto](https://…)&lt;/code&gt; y tablas.</target>
+      </trans-unit>
+      <trans-unit id="guidelines.settings.content_placeholder" resname="guidelines.settings.content_placeholder">
+        <source>guidelines.settings.content_placeholder</source>
+        <target># Registro de horas&#10;- Registra tus horas todos los días…&#10;&#10;# Ausencias&#10;- Regístralas en…&#10;&#10;# Novedades&#10;- AAAA-MM-DD: …</target>
+      </trans-unit>
+      <trans-unit id="guidelines.settings.updated_at" resname="guidelines.settings.updated_at">
+        <source>guidelines.settings.updated_at</source>
+        <target>Última actualización: %date%.</target>
+      </trans-unit>
+      <trans-unit id="guidelines.settings.updated_at_by" resname="guidelines.settings.updated_at_by">
+        <source>guidelines.settings.updated_at_by</source>
+        <target>Última actualización: %date% por %user%.</target>
+      </trans-unit>
+      <trans-unit id="guidelines.settings.never_saved" resname="guidelines.settings.never_saved">
+        <source>guidelines.settings.never_saved</source>
+        <target>Todavía no se guardó ningún texto.</target>
+      </trans-unit>
+      <trans-unit id="guidelines.settings.description_required" resname="guidelines.settings.description_required">
+        <source>guidelines.settings.description_required</source>
+        <target>Descripción obligatoria</target>
+      </trans-unit>
+      <trans-unit id="guidelines.settings.description_required_switch" resname="guidelines.settings.description_required_switch">
+        <source>guidelines.settings.description_required_switch</source>
+        <target>Exigir descripción al guardar o detener un registro</target>
+      </trans-unit>
+      <trans-unit id="guidelines.settings.description_min_length" resname="guidelines.settings.description_min_length">
+        <source>guidelines.settings.description_min_length</source>
+        <target>Mínimo de caracteres</target>
+      </trans-unit>
+      <trans-unit id="guidelines.settings.description_required_since" resname="guidelines.settings.description_required_since">
+        <source>guidelines.settings.description_required_since</source>
+        <target>Aplica a registros desde</target>
+      </trans-unit>
+      <trans-unit id="guidelines.settings.description_required_help" resname="guidelines.settings.description_required_help">
+        <source>guidelines.settings.description_required_help</source>
+        <target>Vale para todas las personas, desde la web, la API y el servidor MCP. Un temporizador se puede iniciar sin descripción; se pide al detenerlo. Los registros anteriores a la fecha se pueden seguir editando sin descripción.</target>
+      </trans-unit>
+      <trans-unit id="guidelines.settings.future" resname="guidelines.settings.future">
+        <source>guidelines.settings.future</source>
+        <target>Horas futuras</target>
+      </trans-unit>
+      <trans-unit id="guidelines.settings.future_mode.kimai" resname="guidelines.settings.future_mode.kimai">
+        <source>guidelines.settings.future_mode.kimai</source>
+        <target>Usar la configuración de Kimai (sin límite propio)</target>
+      </trans-unit>
+      <trans-unit id="guidelines.settings.future_mode.same_day" resname="guidelines.settings.future_mode.same_day">
+        <source>guidelines.settings.future_mode.same_day</source>
+        <target>Permitir horas futuras solo dentro del día de hoy</target>
+      </trans-unit>
+      <trans-unit id="guidelines.settings.future_mode.minutes" resname="guidelines.settings.future_mode.minutes">
+        <source>guidelines.settings.future_mode.minutes</source>
+        <target>Permitir horas futuras hasta un máximo de minutos desde ahora</target>
+      </trans-unit>
+      <trans-unit id="guidelines.settings.future_minutes" resname="guidelines.settings.future_minutes">
+        <source>guidelines.settings.future_minutes</source>
+        <target>Minutos en el futuro</target>
+      </trans-unit>
+      <trans-unit id="guidelines.settings.future_warning" resname="guidelines.settings.future_warning">
+        <source>guidelines.settings.future_warning</source>
+        <target>Para que este límite tenga efecto, activa "%setting%" en %path%. Mientras esté desactivado, Kimai rechaza cualquier hora futura.</target>
+      </trans-unit>
+      <trans-unit id="guidelines.settings.future_help" resname="guidelines.settings.future_help">
+        <source>guidelines.settings.future_help</source>
+        <target>Se controla el inicio y el fin de cada registro, en la zona horaria de la persona, desde la web, la API y el servidor MCP. "Dentro del día de hoy" permite terminar a las 00:00 de mañana.</target>
+      </trans-unit>
+      <trans-unit id="guidelines.settings.go_to_dashboard" resname="guidelines.settings.go_to_dashboard">
+        <source>guidelines.settings.go_to_dashboard</source>
+        <target>Ir a la página principal</target>
+      </trans-unit>
+      <trans-unit id="guidelines.settings.preview_title" resname="guidelines.settings.preview_title">
+        <source>guidelines.settings.preview_title</source>
+        <target>Así se ve</target>
+      </trans-unit>
+      <trans-unit id="guidelines.settings.preview_empty" resname="guidelines.settings.preview_empty">
+        <source>guidelines.settings.preview_empty</source>
+        <target>Sin texto. La tarjeta muestra "%empty%"</target>
+      </trans-unit>
+      <trans-unit id="guidelines.settings.preview_help" resname="guidelines.settings.preview_help">
+        <source>guidelines.settings.preview_help</source>
+        <target>Muestra el texto guardado, o el que escribiste si usaste "Vista previa".</target>
+      </trans-unit>
+      <trans-unit id="guidelines.error.content_too_long" resname="guidelines.error.content_too_long">
+        <source>guidelines.error.content_too_long</source>
+        <target>El texto supera los %max% caracteres.</target>
+      </trans-unit>
+      <trans-unit id="guidelines.error.min_length" resname="guidelines.error.min_length">
+        <source>guidelines.error.min_length</source>
+        <target>El mínimo de caracteres debe estar entre 1 y %max%.</target>
+      </trans-unit>
+      <trans-unit id="guidelines.error.since_invalid" resname="guidelines.error.since_invalid">
+        <source>guidelines.error.since_invalid</source>
+        <target>La fecha "Aplica a registros desde" no es válida.</target>
+      </trans-unit>
+      <trans-unit id="guidelines.error.since_required" resname="guidelines.error.since_required">
+        <source>guidelines.error.since_required</source>
+        <target>Indica desde qué fecha aplica la descripción obligatoria, para no bloquear la edición de registros anteriores.</target>
+      </trans-unit>
+      <trans-unit id="guidelines.error.future_mode_invalid" resname="guidelines.error.future_mode_invalid">
+        <source>guidelines.error.future_mode_invalid</source>
+        <target>La opción de horas futuras no es válida.</target>
+      </trans-unit>
+      <trans-unit id="guidelines.error.future_minutes" resname="guidelines.error.future_minutes">
+        <source>guidelines.error.future_minutes</source>
+        <target>Los minutos de horas futuras deben estar entre 1 y %max%.</target>
+      </trans-unit>
+    </body>
+  </file>
+</xliff>

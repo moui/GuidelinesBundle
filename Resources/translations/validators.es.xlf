@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xliff xmlns="urn:oasis:names:tc:xliff:document:1.2" version="1.2">
+  <file source-language="en" target-language="es" datatype="plaintext" original="validators.es.xlf">
+    <body>
+      <trans-unit id="guidelines.validation.description_required" resname="guidelines.validation.description_required">
+        <source>guidelines.validation.description_required</source>
+        <target>La descripción es obligatoria (mínimo {{ min }} caracteres).</target>
+      </trans-unit>
+      <trans-unit id="guidelines.validation.future_same_day" resname="guidelines.validation.future_same_day">
+        <source>guidelines.validation.future_same_day</source>
+        <target>No se pueden registrar horas de días futuros.</target>
+      </trans-unit>
+      <trans-unit id="guidelines.validation.future_hours" resname="guidelines.validation.future_hours">
+        <source>guidelines.validation.future_hours</source>
+        <target>{1}Solo se pueden registrar horas hasta 1 hora en el futuro.|]1,Inf[Solo se pueden registrar horas hasta {{ limit }} horas en el futuro.</target>
+      </trans-unit>
+      <trans-unit id="guidelines.validation.future_minutes" resname="guidelines.validation.future_minutes">
+        <source>guidelines.validation.future_minutes</source>
+        <target>{1}Solo se pueden registrar horas hasta 1 minuto en el futuro.|]1,Inf[Solo se pueden registrar horas hasta {{ limit }} minutos en el futuro.</target>
+      </trans-unit>
+    </body>
+  </file>
+</xliff>

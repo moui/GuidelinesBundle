@@ -1,0 +1,129 @@
+{% extends 'page_setup.html.twig' %}
+
+{% block main %}
+    {% from '@theme/components/alert.html.twig' import alert %}
+
+    {% for error in errors %}
+        {{ alert({type: 'danger', important: true, description: error.key|trans(error.params)}) }}
+    {% endfor %}
+
+    {% if preview %}
+        {{ alert({type: 'info', description: 'guidelines.settings.preview_notice'|trans}) }}
+    {% endif %}
+
+    <form method="post" action="{{ path('guidelines_settings_save') }}">
+        <input type="hidden" name="_token" value="{{ csrf_token('guidelines_settings') }}">
+
+        <div class="row row-cards">
+            <div class="col-lg-7">
+                {% embed '@theme/embeds/card.html.twig' %}
+                    {% block box_title %}{{ 'guidelines.settings.content'|trans }}{% endblock %}
+                    {% block box_body %}
+                        <p class="text-secondary">
+                            {{ 'guidelines.settings.content_help'|trans({'%card%': '<strong>' ~ ('guidelines.widget.title'|trans|e) ~ '</strong>'})|raw }}
+                        </p>
+                        <textarea class="form-control font-monospace" id="gl_content" name="content" rows="22"
+                                  maxlength="{{ max_length }}"
+                                  placeholder="{{ 'guidelines.settings.content_placeholder'|trans }}">{{ values.content }}</textarea>
+                        <div class="form-hint">
+                            {% if updated_at is not null %}
+                                {% if updated_by is not empty %}
+                                    {{ 'guidelines.settings.updated_at_by'|trans({'%date%': updated_at|date_time, '%user%': updated_by}) }}
+                                {% else %}
+                                    {{ 'guidelines.settings.updated_at'|trans({'%date%': updated_at|date_time}) }}
+                                {% endif %}
+                            {% else %}
+                                {{ 'guidelines.settings.never_saved'|trans }}
+                            {% endif %}
+                        </div>
+                    {% endblock %}
+                {% endembed %}
+
+                {% embed '@theme/embeds/card.html.twig' %}
+                    {% block box_title %}{{ 'guidelines.settings.description_required'|trans }}{% endblock %}
+                    {% block box_body %}
+                        <label class="form-check form-switch mb-3">
+                            <input class="form-check-input" type="checkbox" name="description_required" value="1"
+                                   {{ values.description_required ? 'checked' : '' }}>
+                            <span class="form-check-label">{{ 'guidelines.settings.description_required_switch'|trans }}</span>
+                        </label>
+                        <div class="row">
+                            <div class="col-sm-6 mb-3">
+                                <label class="form-label" for="gl_min">{{ 'guidelines.settings.description_min_length'|trans }}</label>
+                                <input class="form-control" type="number" id="gl_min" name="description_min_length"
+                                       min="1" max="200" value="{{ values.description_min_length }}">
+                            </div>
+                            <div class="col-sm-6 mb-3">
+                                <label class="form-label" for="gl_since">{{ 'guidelines.settings.description_required_since'|trans }}</label>
+                                <input class="form-control" type="date" id="gl_since" name="description_required_since"
+                                       value="{{ values.description_required_since }}">
+                            </div>
+                        </div>
+                        <div class="form-hint">{{ 'guidelines.settings.description_required_help'|trans }}</div>
+                    {% endblock %}
+                {% endembed %}
+
+                {% embed '@theme/embeds/card.html.twig' %}
+                    {% block box_title %}{{ 'guidelines.settings.future'|trans }}{% endblock %}
+                    {% block box_body %}
+                        {% from '@theme/components/alert.html.twig' import alert %}
+                        <div class="mb-3">
+                            <label class="form-check">
+                                <input class="form-check-input" type="radio" name="future_mode" value="kimai"
+                                       {{ values.future_mode == 'kimai' ? 'checked' : '' }}>
+                                <span class="form-check-label">{{ 'guidelines.settings.future_mode.kimai'|trans }}</span>
+                            </label>
+                            <label class="form-check">
+                                <input class="form-check-input" type="radio" name="future_mode" value="same_day"
+                                       {{ values.future_mode == 'same_day' ? 'checked' : '' }}>
+                                <span class="form-check-label">{{ 'guidelines.settings.future_mode.same_day'|trans }}</span>
+                            </label>
+                            <label class="form-check">
+                                <input class="form-check-input" type="radio" name="future_mode" value="minutes"
+                                       {{ values.future_mode == 'minutes' ? 'checked' : '' }}>
+                                <span class="form-check-label">{{ 'guidelines.settings.future_mode.minutes'|trans }}</span>
+                            </label>
+                        </div>
+                        <div class="row">
+                            <div class="col-sm-6 mb-3">
+                                <label class="form-label" for="gl_future_minutes">{{ 'guidelines.settings.future_minutes'|trans }}</label>
+                                <input class="form-control" type="number" id="gl_future_minutes" name="future_minutes"
+                                       min="1" max="1440" value="{{ values.future_minutes }}">
+                            </div>
+                        </div>
+                        {% if values.future_mode != 'kimai' and not kimai_future_allowed %}
+                            {{ alert({type: 'warning', description: 'guidelines.settings.future_warning'|trans({
+                                '%setting%': 'timesheet.rules.allow_future_times'|trans({}, 'system-configuration'),
+                                '%path%': ('menu.system'|trans) ~ ' → ' ~ ('menu.system_configuration'|trans) ~ ' → ' ~ ('timesheet'|trans)
+                            })}) }}
+                        {% endif %}
+                        <div class="form-hint">{{ 'guidelines.settings.future_help'|trans }}</div>
+                    {% endblock %}
+                {% endembed %}
+
+                <div class="btn-list">
+                    <button type="submit" name="action" value="save" class="btn btn-primary">{{ 'action.save'|trans }}</button>
+                    <button type="submit" name="action" value="preview" class="btn">{{ 'preview'|trans }}</button>
+                    <a class="btn btn-link" href="{{ path('homepage') }}">{{ 'guidelines.settings.go_to_dashboard'|trans }}</a>
+                </div>
+            </div>
+
+            <div class="col-lg-5">
+                {% embed '@theme/embeds/card.html.twig' %}
+                    {% block box_title %}{{ 'guidelines.settings.preview_title'|trans }}{% endblock %}
+                    {% block box_body %}
+                        {% if values.content is empty %}
+                            <div class="text-secondary">{{ 'guidelines.settings.preview_empty'|trans({'%empty%': 'guidelines.widget.empty'|trans}) }}</div>
+                        {% else %}
+                            {{ include('@Guidelines/_compact.html.twig') }}
+                            <div class="markdown guidelines-md" style="max-height: 40rem; overflow-y: auto;">
+                                {{ values.content|md2html }}
+                            </div>
+                        {% endif %}
+                    {% endblock %}
+                {% endembed %}
+                <p class="text-secondary small">{{ 'guidelines.settings.preview_help'|trans }}</p>
+            </div>
+        </div>
+    </form>
+{% endblock %}

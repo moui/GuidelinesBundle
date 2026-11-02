@@ -1,0 +1,18 @@
+services:
+    _defaults:
+        autowire: true
+        autoconfigure: true
+        public: false
+
+    # The bundle class itself must stay registered: PluginManager discovers
+    # plugins through the PluginInterface tag on the *service*. Autoconfigure
+    # also tags Validator\TimesheetDescriptionRequired as a TimesheetConstraint,
+    # which is how Kimai picks it up on every timesheet save.
+    KimaiPlugin\GuidelinesBundle\:
+        resource: '../../*'
+        exclude:
+            - '../../Resources/'
+
+    KimaiPlugin\GuidelinesBundle\Controller\:
+        resource: '../../Controller/'
+        tags: ['controller.service_arguments']

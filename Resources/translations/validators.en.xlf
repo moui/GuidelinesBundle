@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xliff xmlns="urn:oasis:names:tc:xliff:document:1.2" version="1.2">
+  <file source-language="en" target-language="en" datatype="plaintext" original="validators.en.xlf">
+    <body>
+      <trans-unit id="guidelines.validation.description_required" resname="guidelines.validation.description_required">
+        <source>guidelines.validation.description_required</source>
+        <target>A description is required (at least {{ min }} characters).</target>
+      </trans-unit>
+      <trans-unit id="guidelines.validation.future_same_day" resname="guidelines.validation.future_same_day">
+        <source>guidelines.validation.future_same_day</source>
+        <target>Time cannot be recorded on future days.</target>
+      </trans-unit>
+      <trans-unit id="guidelines.validation.future_hours" resname="guidelines.validation.future_hours">
+        <source>guidelines.validation.future_hours</source>
+        <target>{1}Time can only be recorded up to 1 hour in the future.|]1,Inf[Time can only be recorded up to {{ limit }} hours in the future.</target>
+      </trans-unit>
+      <trans-unit id="guidelines.validation.future_minutes" resname="guidelines.validation.future_minutes">
+        <source>guidelines.validation.future_minutes</source>
+        <target>{1}Time can only be recorded up to 1 minute in the future.|]1,Inf[Time can only be recorded up to {{ limit }} minutes in the future.</target>
+      </trans-unit>
+    </body>
+  </file>
+</xliff>

@@ -1,0 +1,16 @@
+{# Tight spacing for the rendered Markdown: the browser defaults for headings,
+   paragraphs and tables leave too much air in a dashboard card. Shared by the
+   widget and the settings preview so both look the same. #}
+<style>
+    .guidelines-md h1 { font-size: 1.15rem; margin: 0 0 .5rem; }
+    .guidelines-md h2 { font-size: 1rem; margin: .9rem 0 .3rem; }
+    .guidelines-md h3 { font-size: .95rem; margin: .7rem 0 .25rem; }
+    .guidelines-md p { margin: 0 0 .4rem; }
+    .guidelines-md ul, .guidelines-md ol { margin: 0 0 .4rem; padding-left: 1.2rem; }
+    .guidelines-md li { margin: 0; }
+    .guidelines-md table { width: 100%; margin: 0 0 .5rem; border-collapse: collapse; font-size: .9em; }
+    .guidelines-md th, .guidelines-md td { padding: .2rem .45rem; border-bottom: 1px solid var(--tblr-border-color, #e6e7e9); vertical-align: top; }
+    .guidelines-md th { text-align: left; font-weight: 600; }
+    .guidelines-md code { white-space: normal; }
+    .guidelines-md hr { margin: .8rem 0; border: 0; border-top: 1px solid var(--tblr-border-color, #e6e7e9); opacity: 1; }
+</style>
